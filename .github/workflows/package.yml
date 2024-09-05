@@ -18,8 +18,9 @@ jobs:
           key: dependencies-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         run: |
-          sed -i -e 's|"@yasshi2525/live-on-air": ".*"|' package.json
-          npm ci
+          sed -i -e 's|"@yasshi2525/live-on-air": ".*"||' package.json
+          rm -f package-lock.json
+          npm install
         if: steps.node-cache-restore.outputs.cache-hit != 'true'
       - name: Download latest @yasshi2525/live-on-air
         id: live-on-air

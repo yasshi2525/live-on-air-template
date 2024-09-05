@@ -26,7 +26,7 @@ jobs:
         id: live-on-air
         uses: actions/github-script@v7
         with:
-          github-token: '${{ secrets.LIVE_ON_AIR_TOKEN }}'
+          github-token: ${{ secrets.LIVE_ON_AIR_TOKEN }}
           script: |
             import * as stream from 'node:stream'
             import * as unzipper from 'unzipper'

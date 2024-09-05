@@ -71,9 +71,7 @@ jobs:
       - name: Install @yasshi2525/live-on-air
         run: |
           mv package-lock.json package-lock.origin.json
-          npm install
-          rm -f package-lock.json
-          mv package-lock.origin.json package-lock.json
+          npm install yasshi2525-live-on-air-latest.tgz
         if: steps.artifact-cache-restore.outputs.cache-hit != 'true'
       - name: Build scripts for Akashic Engine
         run: npm run build
@@ -83,6 +81,11 @@ jobs:
         run: |
           echo "VERSION=$(cat package.json | jq '.version' | tr -d '"')" >> $GITHUB_ENV
           echo "TIMESTAMP=$(TZ='Asia/Tokyo' date "+%Y%m%d-%H%M%S")" >> $GITHUB_ENV
+      - name: Restore package-lock.json
+        run: |
+          rm -f package-lock.json
+          mv package-lock.origin.json package-lock.json
+        if: steps.artifact-cache-restore.outputs.cache-hit != 'true'
       - name: Save niconama game package
         uses: actions/upload-artifact@v4
         with:

@@ -28,6 +28,10 @@ jobs:
         with:
           github-token: ${{ secrets.LIVE_ON_AIR_TOKEN }}
           script: |
+            const stream = require('node:stream');
+            const fs = require('node:fs');
+            const unzipper = require('unzipper');
+            
             const runs = await github.rest.actions.listWorkflowRunsForRepo({
               owner: 'yasshi2525',
               repo: 'live-on-air',

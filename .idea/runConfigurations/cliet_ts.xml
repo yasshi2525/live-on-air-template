@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="cliet.ts" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="cliet.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="LIVE_ON_AIR_TOKEN" value="$LIVE_ON_AIR_TOKEN$" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

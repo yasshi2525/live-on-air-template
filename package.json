@@ -4,12 +4,12 @@
   "version": "0.1.0",
   "description": "live game template for akashic",
   "scripts": {
-    "postinstall": "npm run build",
     "build": "rimraf ./script && tsc && akashic scan asset script",
     "update": "akashic scan asset && akashic scan globalScripts",
     "start": "akashic sandbox",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "export": "rimraf game.zip && akashic export zip -o game.zip --nicolive",
+    "export:ci": "rimraf game && akashic export zip --nicolive",
     "test": "npm run lint && jest"
   },
   "author": "yasshi2525",
@@ -17,16 +17,19 @@
   "devDependencies": {
     "@akashic/akashic-cli": "^2.17.22",
     "@akashic/akashic-engine": "^3.18.2",
-    "eslint": "^9.9.1",
+    "@octokit/rest": "^21.0.2",
+    "@types/unzipper": "^0.10.10",
+    "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-n": "^17.10.2",
-    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.4.0"
+    "typescript-eslint": "^8.4.0",
+    "unzipper": "^0.12.3"
   },
   "dependencies": {
-    "@yasshi2525/live-on-air": "file:../live-on-air/yasshi2525-live-on-air-0.1.0.tgz"
+    "@yasshi2525/live-on-air": "file:yasshi2525-live-on-air-0.1.0.tgz"
   }
 }

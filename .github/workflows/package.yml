@@ -1,0 +1,86 @@
+name: package
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - name: Restore node_modules
+        uses: actions/cache@v4
+        id: node-cache-restore
+        with:
+          path: node_modules
+          key: dependencies-${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
+        if: steps.node-cache-restore.outputs.cache-hit != 'true'
+      - name: Download latest @yasshi2525/live-on-air
+        id: live-on-air
+        uses: actions/github-script@v7
+        with:
+          github-token: '${{ secrets.LIVE_ON_AIR_TOKEN }}'
+          script: |
+            import * as stream from 'node:stream'
+            import * as unzipper from 'unzipper'
+            
+            const runs = await github.rest.actions.listWorkflowRunsForRepo({
+              owner: 'yasshi2525',
+              repo: 'live-on-air',
+              status: 'success',
+            });
+            const runID = runs.data.workflow_runs.filter(w => w.name === 'pack')[0].id;
+
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: 'yasshi2525',
+              repo: 'live-on-air',
+              run_id: runID,
+            });
+
+            const artifactID = artifacts.data.artifacts[0].id;
+            const response = await octokit.rest.actions.downloadArtifact({
+              owner: 'yasshi2525',
+              repo: 'live-on-air',
+              artifact_id: artifactID,
+              archive_format: 'zip'
+            });
+            const zipData = response.data;
+            const r = new stream.Readable();
+            r.push(Buffer.from(zipData);
+            r.push(null);
+            r.pipe(unzipper.Extract({ path: '.' })
+            fs.readdirSync('.')
+              .filter(file => file.match(/^yasshi2525-live-on-air-.*\.tgz$/))
+              .forEach(file => {
+                fs.renameSync(file, 'yasshi2525-live-on-air-latest.tgz')
+              })
+      - name: Restore @yasshi2525/live-on-air
+        uses: actions/cache@v4
+        id: artifact-cache-restore
+        with:
+          path: yasshi2525-live-on-air-latest.tgz
+          key: artifact-${{ hashFiles('yasshi2525-live-on-air-latest.tgz') }}
+      - name: Install @yasshi2525/live-on-air
+        run: |
+          mv package-lock.json package-lock.origin.json
+          npm install
+          rm -f package-lock.json
+          mv package-lock.origin.json package-lock.json
+        if: steps.artifact-cache-restore.outputs.cache-hit != 'true'
+      - name: Build scripts for Akashic Engine
+        run: npm run build
+      - name: Export package for niconama game
+        run: npm run export
+      - name: Fetch version and timestamp
+        run: |
+          echo "VERSION=$(cat package.json | jq '.version' | tr -d '"')" >> $GITHUB_ENV
+          echo "TIMESTAMP=$(TZ='Asia/Tokyo' date "+%Y%m%d-%H%M%S")" >> $GITHUB_ENV
+      - name: Save niconama game package
+        uses: actions/upload-artifact@v4
+        with:
+          name: yasshi2525-live-on-air-template-${{ env.VERSION }}-${{ env.TIMESTAMP }}
+          path: game

@@ -57,6 +57,7 @@ jobs:
             r.push(Buffer.from(zipData));
             r.push(null);
             r.pipe(unzipper.Extract({ path: '.' }));
+            console.log(fs.readdirSync('.'));
             fs.readdirSync('.')
               .filter(file => file.match(/^yasshi2525-live-on-air-.*\.tgz$/))
               .forEach(file => {

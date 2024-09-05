@@ -42,7 +42,7 @@ jobs:
             });
 
             const artifactID = artifacts.data.artifacts[0].id;
-            const response = await octokit.rest.actions.downloadArtifact({
+            const response = await github.rest.actions.downloadArtifact({
               owner: 'yasshi2525',
               repo: 'live-on-air',
               artifact_id: artifactID,

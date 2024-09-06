@@ -8,7 +8,7 @@ export const experimental = () => {
       spot.view.onPointDown.add(() => {
         if (spot.status === 'target') {
           spot.unsetAsDestination()
-        } else if (spot.status === 'enabled') {
+        } else if (spot.status === 'enabled' && scene.player.view.visible()) {
           spot.setAsDestination()
         }
       })

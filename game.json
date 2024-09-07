@@ -34,6 +34,13 @@
 			"path": "script/experimental.js",
 			"global": true
 		},
+		"node_modules/@yasshi2525/live-on-air/image/broadcaster.default.png": {
+			"type": "image",
+			"path": "node_modules/@yasshi2525/live-on-air/image/broadcaster.default.png",
+			"width": 300,
+			"height": 96,
+			"global": true
+		},
 		"node_modules/@yasshi2525/live-on-air/image/default.png": {
 			"type": "image",
 			"path": "node_modules/@yasshi2525/live-on-air/image/default.png",
@@ -52,13 +59,6 @@
 			"path": "node_modules/@yasshi2525/live-on-air/image/layer.screen.label.png",
 			"width": 82,
 			"height": 36
-		},
-		"node_modules/@yasshi2525/live-on-air/image/player.default.png": {
-			"type": "image",
-			"path": "node_modules/@yasshi2525/live-on-air/image/player.default.png",
-			"width": 172,
-			"height": 96,
-			"global": true
 		},
 		"node_modules/@yasshi2525/live-on-air/image/spot.default.disabled.png": {
 			"type": "image",
@@ -113,28 +113,28 @@
 		"node_modules/@akashic-extension/akashic-timeline/lib/Timeline.js",
 		"node_modules/@akashic-extension/akashic-timeline/lib/Tween.js",
 		"node_modules/@akashic-extension/akashic-timeline/lib/index.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/broadcasterBuilder.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/broadcasterConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/fieldBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/layerBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/layerConfigure.js",
-		"node_modules/@yasshi2525/live-on-air/lib/builder/playerBuilder.js",
-		"node_modules/@yasshi2525/live-on-air/lib/builder/playerConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/sceneBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/sceneConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/screenBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/spotBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/spotConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/index.js",
+		"node_modules/@yasshi2525/live-on-air/lib/model/broadcaster.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/field.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/layer.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/live.js",
-		"node_modules/@yasshi2525/live-on-air/lib/model/player.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/scene.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/screen.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/spot.js",
 		"node_modules/@yasshi2525/live-on-air/lib/util/loader.js",
+		"node_modules/@yasshi2525/live-on-air/lib/value/broadcasterConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/fieldConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/layerConfig.js",
-		"node_modules/@yasshi2525/live-on-air/lib/value/playerConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/screenConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/spotConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/value.js"

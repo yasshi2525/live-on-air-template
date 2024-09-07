@@ -16,7 +16,6 @@ export const showcase = (experimental?: (scene: LiveOnAirScene) => void) => {
       new g.FilledRect({
         scene, width: field.width, height: field.height, cssColor: '#44aa22', opacity: 0.25
       }), scene.layer.field.children![0])
-    scene.layer.field.append(scene.broadcaster.view)
     if (experimental) {
       experimental(scene)
     }

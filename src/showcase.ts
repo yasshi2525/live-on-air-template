@@ -1,8 +1,8 @@
-import { Scene, SceneBuilder } from '@yasshi2525/live-on-air'
+import { LiveOnAirScene, LiveOnAirSceneBuilder } from '@yasshi2525/live-on-air'
 
-export const showcase = (experimental?: (scene: Scene) => void) => {
+export const showcase = (experimental?: (scene: LiveOnAirScene) => void) => {
   const field = { x: 100, y: 100, width: g.game.width - 200, height: g.game.height - 200 }
-  const sb = new SceneBuilder(g.game)
+  const sb = new LiveOnAirSceneBuilder(g.game)
     .layer({ field })
     .field({})
     .broadcaster({ x: field.width / 2, y: field.height / 2 })

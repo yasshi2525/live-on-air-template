@@ -1,8 +1,8 @@
 import { showcase } from './showcase'
-import { Scene } from '@yasshi2525/live-on-air'
+import { LiveOnAirScene } from '@yasshi2525/live-on-air'
 
 export const experimental = () => {
-  showcase((scene: Scene) => {
+  showcase((scene: LiveOnAirScene) => {
     for (const spot of scene.spots) {
       spot.view.touchable = true
       spot.view.onPointDown.add(() => {

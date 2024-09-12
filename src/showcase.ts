@@ -13,24 +13,24 @@ export const showcase = (experimental?: (scene: LiveOnAirScene) => void) => {
       })
 
       protected evaluateScore (context: LiveContext): number {
-        return (context.vars as Record<string, g.FilledRect>).gauge.width / context.view.width * 100
+        return (context.vars as Record<string, g.FilledRect>).gauge.width / context.container.width * 100
       }
 
       protected handleGamePlay (context : LiveContext): () => void {
-        const { scene, view } = { ...context }
+        const { scene, container } = { ...context }
         const gauge = new g.FilledRect({
           scene,
-          parent: view,
+          parent: container,
           width: 0,
           height: 100,
           cssColor: '#aa4444',
-          y: view.height / 2,
+          y: container.height / 2,
           anchorY: 0.5
         })
         context.vars = { gauge }
         gauge.onUpdate.add(() => {
-          gauge.width += view.width / 120
-          if (gauge.width > view.width) {
+          gauge.width += container.width / 120
+          if (gauge.width > container.width) {
             gauge.width = 0
           }
           gauge.modified()
@@ -40,17 +40,17 @@ export const showcase = (experimental?: (scene: LiveOnAirScene) => void) => {
         }
       }
 
-      protected handleIntroduction ({ scene, view }: LiveContext, next: () => void) {
-        view.append(new g.FilledRect({
+      protected handleIntroduction ({ scene, container }: LiveContext, next: () => void) {
+        container.append(new g.FilledRect({
           scene,
-          width: view.width,
-          height: view.height,
+          width: container.width,
+          height: container.height,
           cssColor: '#ffffaa',
           opacity: 0.25
         }))
         const description = new g.Label({
           scene,
-          parent: view,
+          parent: container,
           text: 'ゲージの最大値でボタンを押そう！',
           font: this.font
         })

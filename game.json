@@ -37,8 +37,8 @@
 		"node_modules/@yasshi2525/live-on-air/image/broadcaster.default.png": {
 			"type": "image",
 			"path": "node_modules/@yasshi2525/live-on-air/image/broadcaster.default.png",
-			"width": 300,
-			"height": 94,
+			"width": 192,
+			"height": 72,
 			"global": true
 		},
 		"node_modules/@yasshi2525/live-on-air/image/default.png": {
@@ -128,6 +128,7 @@
 		"node_modules/@yasshi2525/live-on-air/lib/model/field.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/layer.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/live.js",
+		"node_modules/@yasshi2525/live-on-air/lib/model/liveGame.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/liveOnAirScene.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/screen.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/spot.js",

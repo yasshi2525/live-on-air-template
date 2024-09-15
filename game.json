@@ -48,6 +48,12 @@
 			"height": 94,
 			"global": true
 		},
+		"node_modules/@yasshi2525/live-on-air/image/layer.comment.label.png": {
+			"type": "image",
+			"path": "node_modules/@yasshi2525/live-on-air/image/layer.comment.label.png",
+			"width": 109,
+			"height": 37
+		},
 		"node_modules/@yasshi2525/live-on-air/image/layer.field.label.png": {
 			"type": "image",
 			"path": "node_modules/@yasshi2525/live-on-air/image/layer.field.label.png",
@@ -115,6 +121,10 @@
 		"node_modules/@akashic-extension/akashic-timeline/lib/index.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/broadcasterBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/broadcasterConfigure.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/commentDeployerBuilder.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/commentDeployerConfigure.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/commentSupplierBuilder.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/commentSupplierConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/fieldBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/layerBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/layerConfigure.js",
@@ -125,6 +135,9 @@
 		"node_modules/@yasshi2525/live-on-air/lib/builder/spotConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/index.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/broadcaster.js",
+		"node_modules/@yasshi2525/live-on-air/lib/model/commentContextSupplier.js",
+		"node_modules/@yasshi2525/live-on-air/lib/model/commentDeployer.js",
+		"node_modules/@yasshi2525/live-on-air/lib/model/commentSupplier.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/field.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/layer.js",
 		"node_modules/@yasshi2525/live-on-air/lib/model/live.js",
@@ -134,6 +147,8 @@
 		"node_modules/@yasshi2525/live-on-air/lib/model/spot.js",
 		"node_modules/@yasshi2525/live-on-air/lib/util/loader.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/broadcasterConfig.js",
+		"node_modules/@yasshi2525/live-on-air/lib/value/commentDeployerConfig.js",
+		"node_modules/@yasshi2525/live-on-air/lib/value/commentSupplierConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/fieldConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/layerConfig.js",
 		"node_modules/@yasshi2525/live-on-air/lib/value/screenConfig.js",

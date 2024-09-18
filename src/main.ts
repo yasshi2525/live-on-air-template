@@ -15,12 +15,14 @@ export function main(param: GameMainParameterObject): void {
 		.spot({
 			x: 500,
 			y: 250,
-			liveClass: SampleLiveGame
+			liveClass: SampleLiveGame,
+			name: "1"
 		})
 		// 2つ目のスポットを配置します
 		.spot({
 			x: 750,
-			y: 350
+			y: 350,
+			name: "2"
 		})
 		// 残り時間を設定します
 		.ticker({
@@ -28,20 +30,9 @@ export function main(param: GameMainParameterObject): void {
 		})
 		.build();
 	scene.onLoad.add(() => {
-		const spots = scene.spots;
-		const screen = scene.screen;
+		const { spots } = scene;
 		// 2つ目のスポットは 1つ目のスポットを攻略しなければ訪問できないようにします.
 		spots[1].lockedBy(spots[0]);
-		scene.onUpdate.add((): void => {
-			if (screen.nowOnAir instanceof SampleLiveGame) {
-				// 1つ目のスポット訪問時に始まる SampleLiveGame で 75点以上とった場合、2つ目のスポットを解放します.
-				screen.nowOnAir.onSubmit.addOnce(({ score }) => {
-					if (score >= 75) {
-						spots[1].unlock(spots[0]);
-					}
-				});
-			}
-		});
 	});
 	g.game.pushScene(scene);
 }

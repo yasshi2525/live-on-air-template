@@ -26,6 +26,11 @@
 			"path": "script/parameterObject.js",
 			"global": true
 		},
+		"sampleLiveGame": {
+			"type": "script",
+			"path": "script/sampleLiveGame.js",
+			"global": true
+		},
 		"node_modules/@yasshi2525/live-on-air/image/broadcaster.default.png": {
 			"type": "image",
 			"path": "node_modules/@yasshi2525/live-on-air/image/broadcaster.default.png",
@@ -98,11 +103,6 @@
 			"width": 150,
 			"height": 100,
 			"global": true
-		},
-		"sampleLiveGame": {
-			"type": "script",
-			"path": "script/sampleLiveGame.js",
-			"global": true
 		}
 	},
 	"environment": {
@@ -129,6 +129,7 @@
 		"node_modules/@yasshi2525/live-on-air/lib/builder/commentSupplierBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/commentSupplierConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/fieldBuilder.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/fieldConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/layerBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/layerConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/liveOnAirSceneBuilder.js",
@@ -136,6 +137,7 @@
 		"node_modules/@yasshi2525/live-on-air/lib/builder/scorerBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/scorerConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/screenBuilder.js",
+		"node_modules/@yasshi2525/live-on-air/lib/builder/screenConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/spotBuilder.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/spotConfigure.js",
 		"node_modules/@yasshi2525/live-on-air/lib/builder/tickerBuilder.js",

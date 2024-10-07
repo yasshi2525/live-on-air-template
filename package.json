@@ -1,7 +1,7 @@
 {
   "name": "@yasshi2525/live-on-air-template",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "live game template for akashic",
   "scripts": {
     "postinstall": "npm run build",
@@ -31,6 +31,6 @@
     "typescript": "5.3"
   },
   "dependencies": {
-    "@yasshi2525/live-on-air": "^1.0.0-alpha.1"
+    "@yasshi2525/live-on-air": "^1.0.1"
   }
 }
